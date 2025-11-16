@@ -276,16 +276,3 @@ This project is inspired by:
 * Work on low-dose imaging, iterative reconstruction, and ML-based denoising.
 * The Rust, Python, and open-source communities that make this kind of pipeline possible.
 
----
-
-```
-
----
-
-If you want, next step I can:
-
-- Turn the **Rust workspace** part into a ready-to-copy `Cargo.toml`  
-- Or sketch a **tiny first implementation** of `recon-core` with a fake MART loop + unit test so you can paste it straight in and `cargo test` it.
-::contentReference[oaicite:0]{index=0}
-```
-
