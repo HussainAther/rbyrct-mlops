@@ -1,0 +1,43 @@
+# configs/experiments/exp_0001_mart_unet.yaml
+
+id: exp_0001_mart_unet
+
+description: >
+  Baseline 2D MART reconstruction on TOPAS phantom + UNet denoiser.
+  Single phantom, single dose level, standard angle coverage.
+
+sim:
+  run_id: topas_run_0001
+  # Folder where TOPAS projections + geometry live
+  data_path: data/raw/topas_runs/topas_run_0001
+  projections_file: projections.npz      # inside data_path
+  geometry_file: geometry.json           # inside data_path
+  phantom_file: phantom.npy              # optional: ground truth
+
+recon:
+  method: MART
+  # Path to Rust MART CLI binary (you can adjust once compiled)
+  rust_binary: rust-services/target/release/mart_cli
+  n_iters: 50
+  relaxation: 0.5
+
+model:
+  type: unet_v1
+  module: training.rbyrct_denoiser.models
+  class_name: SmallUNet
+  checkpoint: checkpoints/unet_v1.pt
+  device: auto   # "auto" | "cpu" | "cuda"
+
+metrics:
+  compute_ssim: true
+  compute_psnr: true
+  # path to phantom/ground truth, if different from sim.phantom_file
+  gt_volume_path: null
+
+output:
+  base_dir: experiments/exp_0001_mart_unet
+  save_recon: true
+  save_denoised: true
+  save_config_copy: true
+  metrics_file: metrics.csv
+  log_file: run.log
