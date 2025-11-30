@@ -17,7 +17,7 @@ sim:
 recon:
   method: MART
   # Path to Rust MART CLI binary (you can adjust once compiled)
-  rust_binary: rust-services/target/release/mart_cli
+  rust_binary: rust-services/recon-core/target/release/mart_cli
   n_iters: 50
   relaxation: 0.5
 
