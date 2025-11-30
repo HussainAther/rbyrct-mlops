@@ -1,3 +1,14 @@
 [2025-11-29 16:09:34 UTC] Starting experiment exp_0001_mart_unet
 [2025-11-29 16:09:35 UTC] [WARN] Rust binary not found at rust-services/target/release/mart_cli (you may need to build it).
 [2025-11-29 16:09:35 UTC] Running Rust MART: rust-services/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npz --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:31:03 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 04:31:03 UTC] [WARN] Rust binary not found at rust-services/target/release/mart_cli (you may need to build it).
+[2025-11-30 04:31:03 UTC] Running Rust MART: rust-services/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npz --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:32:25 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 04:32:25 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npz --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:35:44 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 04:35:44 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npz --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:38:47 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 04:38:48 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npz --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:39:26 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 04:39:26 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npz --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
