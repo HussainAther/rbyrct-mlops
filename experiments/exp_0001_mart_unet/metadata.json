@@ -1,0 +1,5 @@
+{
+  "id": "exp_0001_mart_unet",
+  "description": "Baseline 2D MART reconstruction on TOPAS phantom + UNet denoiser. Single phantom, single dose level, standard angle coverage.\n",
+  "timestamp_utc": "2025-11-30T05:07:05.262775"
+}
