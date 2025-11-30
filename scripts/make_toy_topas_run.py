@@ -23,14 +23,13 @@ def main():
 
     projections = system_matrix @ phantom  # shape (2,)
 
-    npz_path = base / "projections.npz"
-    # IMPORTANT: use named arguments here so keys are correct
-    np.savez(
-        npz_path,
-        projections=projections,
-        system_matrix=system_matrix,
-    )
-    print(f"Saved NPZ to {npz_path}")
+    # Save as separate .npy files
+    proj_path = base / "projections.npy"
+    sysm_path = base / "system_matrix.npy"
+    np.save(proj_path, projections)
+    np.save(sysm_path, system_matrix)
+    print(f"Saved projections to {proj_path}")
+    print(f"Saved system matrix to {sysm_path}")
 
     # Geometry JSON placeholder
     geom = {
@@ -48,10 +47,6 @@ def main():
     phantom_path = base / "phantom.npy"
     np.save(phantom_path, phantom)
     print(f"Saved phantom (ground truth) to {phantom_path}")
-
-    # --- Self-check: print NPZ file keys ---
-    f = np.load(npz_path)
-    print("NPZ keys:", f.files)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,6 @@
+{
+  "description": "toy 2-ray, 2-voxel system",
+  "num_rays": 2,
+  "num_voxels": 2,
+  "note": "placeholder geometry; real RBYRCT geometry comes later."
+}

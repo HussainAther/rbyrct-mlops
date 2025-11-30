@@ -51,17 +51,21 @@ def run_rust_mart(cfg: dict, exp_dir: Path, log_path: Path) -> Path:
         log("[WARN] Rust binary not found at {} (you may need to build it).".format(rust_bin), log_path)
 
     projections_path = Path(sim_cfg["data_path"]) / sim_cfg["projections_file"]
+    system_matrix_path = Path(sim_cfg["data_path"]) / sim_cfg["system_matrix_file"]
     geometry_path = Path(sim_cfg["data_path"]) / sim_cfg["geometry_file"]
     recon_output = exp_dir / "volume_recon.npy"
 
     cmd = [
         str(rust_bin),
         "--projections", str(projections_path),
+        "--system-matrix", str(system_matrix_path),
         "--geometry", str(geometry_path),
         "--n-iters", str(recon_cfg["n_iters"]),
         "--relaxation", str(recon_cfg["relaxation"]),
         "--output", str(recon_output),
     ]
+
+
 
     log("Running Rust MART: " + " ".join(cmd), log_path)
     subprocess.run(cmd, check=True)

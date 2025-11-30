@@ -12,3 +12,13 @@
 [2025-11-30 04:38:48 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npz --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
 [2025-11-30 04:39:26 UTC] Starting experiment exp_0001_mart_unet
 [2025-11-30 04:39:26 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npz --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:48:41 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 04:48:41 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npy --system-matrix data/raw/topas_runs/topas_run_0001/system_matrix.npy --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:56:02 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 04:56:02 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npy --system-matrix data/raw/topas_runs/topas_run_0001/system_matrix.npy --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:56:02 UTC] Rust MART finished. Recon saved to experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 04:56:02 UTC] Loading denoiser model...
+[2025-11-30 05:01:28 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 05:01:28 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npy --system-matrix data/raw/topas_runs/topas_run_0001/system_matrix.npy --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 05:01:28 UTC] Rust MART finished. Recon saved to experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 05:01:28 UTC] No checkpoint; skipping denoising.
