@@ -28,9 +28,8 @@ model:
   device: auto
 
 metrics:
-  compute_ssim: true
-  compute_psnr: true
-  # path to phantom/ground truth, if different from sim.phantom_file
+  compute_ssim: false
+  compute_psnr: false
   gt_volume_path: null
 
 output:

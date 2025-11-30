@@ -22,3 +22,11 @@
 [2025-11-30 05:01:28 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npy --system-matrix data/raw/topas_runs/topas_run_0001/system_matrix.npy --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
 [2025-11-30 05:01:28 UTC] Rust MART finished. Recon saved to experiments/exp_0001_mart_unet/volume_recon.npy
 [2025-11-30 05:01:28 UTC] No checkpoint; skipping denoising.
+[2025-11-30 05:07:05 UTC] Starting experiment exp_0001_mart_unet
+[2025-11-30 05:07:05 UTC] Running Rust MART: rust-services/recon-core/target/release/mart_cli --projections data/raw/topas_runs/topas_run_0001/projections.npy --system-matrix data/raw/topas_runs/topas_run_0001/system_matrix.npy --geometry data/raw/topas_runs/topas_run_0001/geometry.json --n-iters 50 --relaxation 0.5 --output experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 05:07:05 UTC] Rust MART finished. Recon saved to experiments/exp_0001_mart_unet/volume_recon.npy
+[2025-11-30 05:07:05 UTC] No checkpoint; skipping denoising.
+[2025-11-30 05:07:05 UTC] Metrics written to experiments/exp_0001_mart_unet/metrics.csv
+[2025-11-30 05:07:05 UTC] Config copied to experiments/exp_0001_mart_unet/config.yaml
+[2025-11-30 05:07:05 UTC] Metadata saved to experiments/exp_0001_mart_unet/metadata.json
+[2025-11-30 05:07:05 UTC] Experiment exp_0001_mart_unet completed.
