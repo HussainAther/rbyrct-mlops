@@ -194,9 +194,10 @@ def save_metadata(cfg: dict, exp_dir: Path, cfg_path: Path, log_path: Path):
         dst = exp_dir / "config.yaml"
         shutil.copy(cfg_path, dst)
         log("Config copied to {}".format(dst), log_path)
-
     meta = {
-        "id": cfg["id"],
+       "id": cfg["id"],
+       "family": cfg.get("family", ""),
+        "variant": cfg.get("variant", ""),
         "description": cfg.get("description", ""),
         "timestamp_utc": datetime.utcnow().isoformat(),
     }
