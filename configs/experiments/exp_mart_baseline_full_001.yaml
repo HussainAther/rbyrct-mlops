@@ -1,0 +1,44 @@
+id: exp_mart_baseline_full_001
+
+family: mart_baseline
+variant: full_angles_1x_dose_toy
+
+description: >
+  Baseline MART on tiny toy phantom with full angle coverage and 1x dose.
+  This is a minimal smoke test of the end-to-end pipeline.
+
+sim:
+  run_id: topas_run_0001_toy
+  data_path: data/raw/topas_runs/topas_run_0001
+  projections_file: projections.npy
+  system_matrix_file: system_matrix.npy
+  geometry_file: geometry.json
+  phantom_file: phantom.npy
+
+recon:
+  method: MART
+  rust_binary: rust-services/recon-core/target/release/mart_cli
+  n_iters: 50
+  relaxation: 0.5
+
+model:
+  type: none
+  module:
+  class_name:
+  checkpoint:
+  device: auto
+
+metrics:
+  # Toy phantom may be too small for SSIM/PSNR; enable later for real images.
+  compute_ssim: false
+  compute_psnr: false
+  gt_volume_path: null
+
+output:
+  base_dir: experiments/exp_mart_baseline_full_001
+  save_recon: true
+  save_denoised: false
+  save_config_copy: true
+  metrics_file: metrics.csv
+  log_file: run.log
+

@@ -1,0 +1,43 @@
+id: exp_mart_baseline_full_002
+
+family: mart_baseline
+variant: full_angles_1x_dose_relaxation_sweep
+
+description: >
+  Study effect of MART relaxation parameter on convergence and stability
+  under full angle coverage and 1x dose.
+
+sim:
+  run_id: topas_run_0001_toy
+  data_path: data/raw/topas_runs/topas_run_0001
+  projections_file: projections.npy
+  system_matrix_file: system_matrix.npy
+  geometry_file: geometry.json
+  phantom_file: phantom.npy
+
+recon:
+  method: MART
+  rust_binary: rust-services/recon-core/target/release/mart_cli
+  n_iters: 100
+  relaxation: 1.0    # you can clone configs and try 0.25, 0.5, 1.5 etc.
+
+model:
+  type: none
+  module:
+  class_name:
+  checkpoint:
+  device: auto
+
+metrics:
+  compute_ssim: false
+  compute_psnr: false
+  gt_volume_path: null
+
+output:
+  base_dir: experiments/exp_mart_baseline_full_002
+  save_recon: true
+  save_denoised: false
+  save_config_copy: true
+  metrics_file: metrics.csv
+  log_file: run.log
+
