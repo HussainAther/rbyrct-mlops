@@ -1,0 +1,43 @@
+id: exp_mart_lowdose_unet_0p1x_001
+
+family: mart_lowdose_unet
+variant: full_angles_0p1x_unet_v1
+
+description: >
+  Very low dose (0.1x) MART with UNet v1 denoiser.
+  Stress-test regime: can UNet rescue extremely noisy projections?
+
+sim:
+  run_id: topas_run_lowdose_0p1x_0001
+  data_path: data/raw/topas_runs/topas_run_lowdose_0p1x_0001   # TODO: generate
+  projections_file: projections.npy
+  system_matrix_file: system_matrix.npy
+  geometry_file: geometry.json
+  phantom_file: phantom.npy
+
+recon:
+  method: MART
+  rust_binary: rust-services/recon-core/target/release/mart_cli
+  n_iters: 200
+  relaxation: 0.5
+
+model:
+  type: unet_v1
+  module: training.rbyrct_denoiser.models
+  class_name: SmallUNet
+  checkpoint: checkpoints/unet_v1_lowdose_0p1x.pt   # TODO: train + save
+  device: auto
+
+metrics:
+  compute_ssim: true
+  compute_psnr: true
+  gt_volume_path: null
+
+output:
+  base_dir: experiments/exp_mart_lowdose_unet_0p1x_001
+  save_recon: true
+  save_denoised: true
+  save_config_copy: true
+  metrics_file: metrics.csv
+  log_file: run.log
+

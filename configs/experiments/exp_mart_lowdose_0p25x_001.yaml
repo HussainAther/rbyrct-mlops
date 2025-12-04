@@ -1,0 +1,43 @@
+id: exp_mart_lowdose_0p25x_001
+
+family: mart_lowdose
+variant: full_angles_0p25x_dose
+
+description: >
+  MART reconstruction at 0.25x dose with full angles.
+  Tests more aggressive dose reduction.
+
+sim:
+  run_id: topas_run_lowdose_0p25x_0001
+  data_path: data/raw/topas_runs/topas_run_lowdose_0p25x_0001   # TODO: generate
+  projections_file: projections.npy
+  system_matrix_file: system_matrix.npy
+  geometry_file: geometry.json
+  phantom_file: phantom.npy
+
+recon:
+  method: MART
+  rust_binary: rust-services/recon-core/target/release/mart_cli
+  n_iters: 150
+  relaxation: 0.5
+
+model:
+  type: none
+  module:
+  class_name:
+  checkpoint:
+  device: auto
+
+metrics:
+  compute_ssim: true
+  compute_psnr: true
+  gt_volume_path: null
+
+output:
+  base_dir: experiments/exp_mart_lowdose_0p25x_001
+  save_recon: true
+  save_denoised: false
+  save_config_copy: true
+  metrics_file: metrics.csv
+  log_file: run.log
+
